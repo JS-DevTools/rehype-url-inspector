@@ -14,6 +14,107 @@ Rehype URL Inspector
 
 
 
+Example
+--------------------------
+
+**example.html**<br>
+This HTML file contains many different types of URLs:
+
+```html
+<html>
+  <head>
+    <link rel="canonical" href="http://example.com/some/page/">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.png">
+    <link rel="stylesheet" type="text/css" href="/css/main.css?v=5">
+
+    <meta name="twitter:url" content="http://example.com/some/page/">
+    <meta name="twitter:image" content="http://example.com/img/logo.png">
+
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "headline": "Hello, World!",
+        "url": "http://example.com/some/page/",
+        "image": "http://example.com/img/logo.png"
+      }
+    </script>
+
+    <style>
+      body {
+        background: #ffffff url("img/background.png") center center no-repeat;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      <a href="/">
+        <img src="/img/logo.png"> Hello World
+      </a>
+    </h1>
+    <p>
+      <a href="//external.com" target="_blank">Lorem ipsum</a> dolor sit amet,
+      non dignissim dolor. Sed diam tellus, <a href="some-page.html">malesuada, dictum nulla</a>.
+    </p>
+
+    <script src="//external.com/script.js"></script>
+  </body>
+</html>
+```
+
+**example.js**<br>
+This script reads the `example.html` file above and finds all the URLs in it. The script uses [unified](https://unifiedjs.com/), [rehype-parse](https://github.com/rehypejs/rehype/tree/master/packages/rehype-parse), [rehype-stringify](https://github.com/rehypejs/rehype/tree/master/packages/rehype-stringify), and [to-vfile](https://github.com/vfile/to-vfile).
+
+
+```javascript
+const unified = require("unified");
+const parse = require("rehype-parse");
+const inspectUrls = require("rehype-url-inspector");
+const stringify = require("rehype-stringify");
+const toVFile = require("to-vfile");
+
+async function example() {
+  // Create a Rehype processor with the inspectUrls plugin
+  const processor = unified()
+    .use(parse)
+    .use(inspectUrls, {
+      inspectEach({ url }) {
+        // Log each URL
+        console.log(url);
+      }
+    })
+    .use(stringify);
+
+  // Read the example HTML file
+  let file = await toVFile.read("example.html");
+
+  // Crawl the HTML file and find all the URLs
+  await processor.process(file);
+}
+
+example();
+```
+
+Running this script produces the following output:
+
+```
+http://example.com/some/page/
+/site.webmanifest
+/img/favicon.png
+/css/main.css?v=5
+http://example.com/some/page/
+http://example.com/img/logo.png
+http://schema.org
+http://example.com/some/page/
+http://example.com/img/logo.png
+img/background.png
+/
+/img/logo.png
+//external.com
+some-page.html
+//external.com/script.js
+```
+
 
 
 Installation
