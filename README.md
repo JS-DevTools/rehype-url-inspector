@@ -13,6 +13,29 @@ Rehype URL Inspector
 
 
 
+Features
+--------------------------
+- Inspect every URL on an HTML page and do whatever you want to, such as:
+  - Normalize URLs
+  - Check for broken links
+  - Replace URLs with different URLs
+  - Add attributes (like `target="blank"`) to certain links
+
+- Finds **all types of URLs** by default, such as:
+  - `<a href="http://example.com">`
+  - `<img src="img/logo.png">`
+  - `<link rel="stylesheet" href="/css/main.css">`
+  - `<link rel="manifest" href="/site.manifest">`
+  - `<meta rel="canonical" content="https://example.com/some/page/">`
+  - `<meta property="og:image" content="img/logo.png">`
+  - `<script src="//example.com/script.js">`
+  - `<script type="application/ld+json">{"url": "www.example.com"}</script>`
+  - `<style>body { background: url("/img/background.png"); }</style>`
+
+- You can remove the built-in URL rules
+- You can add your own **custom URL rules**
+- You can abort the URL search at any time
+
 
 Example
 --------------------------
