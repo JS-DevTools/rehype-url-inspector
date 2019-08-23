@@ -14,7 +14,7 @@ export function inspectUrls(this: Processor, opts?: Options): Transformer {
   return function transformer(root: Node, file: VFile): Node {
     let { inspect, inspectEach } = options;
     let urls: UrlMatch[] = [];
-    let keepGoing: boolean | undefined;
+    let keepGoing: unknown;
 
     for (let node of crawl(root)) {
       for (let url of findUrls({ node, root, file }, options)) {

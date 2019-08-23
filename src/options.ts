@@ -32,7 +32,7 @@ export interface Options {
    * Return a falsy value (other than `undefined`) to skip the rest of the URLs in the document.
    * Return a truthy value (or no value at all) to continue.
    */
-  inspectEach?(url: UrlMatch): boolean | undefined;
+  inspectEach?(url: UrlMatch): unknown;
 }
 
 
@@ -44,7 +44,7 @@ export class NormalizedOptions {
   public readonly selectors: UrlSelector[] = [];
   public readonly extractors: UrlExtractor[] = [];
   public readonly inspect?: (urls: UrlMatch[]) => void;
-  public readonly inspectEach?: (url: UrlMatch) => boolean | undefined;
+  public readonly inspectEach?: (url: UrlMatch) => unknown;
 
   /**
    * Applies default values for any unspecified options
