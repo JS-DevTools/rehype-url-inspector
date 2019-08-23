@@ -171,6 +171,7 @@ unified().use(inspectUrls, {
   inspect(urls) { ... },      // This function is called once with ALL of the URLs
   inspectEach(url) { ... },   // This function is called for each URL as it's found
   selectors: [
+    "a[href]",                // Only search for links, not other types of URLs
     "div[data-image]"         // CSS selectors for custom URL attributes
   ]
 });
@@ -185,7 +186,7 @@ Rehype URL Inspector supports the following options:
 |Option                |Type                |Default                |Description
 |:---------------------|:-------------------|:----------------------|:-----------------------------------------
 |`selectors`           |array of strings, objects, and/or functions |[built-in selectors](src/selectors.ts) |Selectors indicate where to look for URLs in the document. Each selector can be a CSS attribute selector string, like `a[href]` or `img[src]`, or a function that accepts a [HAST node](https://github.com/syntax-tree/hast) and returns its URL(s). See [`extractors.ts`](src/extractors.ts) for examples.
-|`keepDefaultSelectors`|boolean             |`true`                 |Whether to keep the default selectors in addition to any custom ones.
+|`keepDefaultSelectors`|boolean             |`false`                |Whether to keep the default selectors in addition to any custom ones.
 |`inspect`             |function            |no-op                  |A function that is called _once_ and receives an array containing all the URLs in the document
 |`inspectEach`         |function            |no-op                  |A function that is called for _each_ URL in the document as it's found. Return `false` to abort the search and skip the rest of the document.
 

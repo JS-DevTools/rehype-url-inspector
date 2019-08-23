@@ -16,7 +16,7 @@ export interface Options {
   /**
    * Whether to keep the default selectors in addition to any custom ones.
    *
-   * Defaults to `true`.
+   * Defaults to `false`.
    */
   keepDefaultSelectors?: boolean;
 
@@ -53,25 +53,24 @@ export class NormalizedOptions {
     this.inspect = options.inspect;
     this.inspectEach = options.inspectEach;
 
-    let keepDefaultSelectors = options.keepDefaultSelectors === undefined ? true : options.keepDefaultSelectors;
-    let selectors = options.selectors || [];
-
-    // Split the UrlSelectors from the UrlExtractors
-    for (let selector of selectors) {
-      if (typeof selector === "function") {
-        this.extractors.push(selector);
-      }
-      else if (typeof selector === "string") {
-        selector = createUrlSelector(selector);
-        this.selectors.push(selector);
-      }
-      else {
-        this.selectors.push(selector);
+    if (options.selectors) {
+      // Split the UrlSelectors from the UrlExtractors
+      for (let selector of options.selectors) {
+        if (typeof selector === "function") {
+          this.extractors.push(selector);
+        }
+        else if (typeof selector === "string") {
+          selector = createUrlSelector(selector);
+          this.selectors.push(selector);
+        }
+        else {
+          this.selectors.push(selector);
+        }
       }
     }
 
-    // Add our default selectors and extractors, if permitted
-    if (keepDefaultSelectors) {
+    if (!options.selectors || options.keepDefaultSelectors) {
+      // Add our default selectors and extractors
       this.selectors.push(...defaultSelectors);
       this.extractors.push(...defaultExtractors);
     }
