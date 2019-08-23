@@ -49,22 +49,29 @@
   "devDependencies": {
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.7",
-    "@types/node": "^12.0.7",
+    "@types/node": "^12.6.8",
+    "@types/unist": "^2.0.3",
     "chai": "^4.2.0",
-    "chai-exec": "^1.1.1",
-    "coveralls": "^3.0.4",
-    "eslint": "^5.16.0",
+    "coveralls": "^3.0.5",
+    "eslint": "^6.1.0",
     "eslint-config-modular": "^7.0.0",
-    "mocha": "^6.1.4",
+    "mocha": "^6.2.0",
     "npm-check": "^5.9.0",
     "nyc": "^14.1.1",
+    "rehype-parse": "^6.0.1",
+    "rehype-stringify": "^6.0.0",
     "shx": "^0.3.2",
-    "tslint": "^5.17.0",
+    "sinon": "^7.4.1",
+    "to-vfile": "^6.0.0",
+    "tslint": "^5.18.0",
     "tslint-modular": "^1.4.1",
-    "typescript": "^3.5.1",
-    "typescript-tslint-plugin": "^0.5.0",
-    "version-bump-prompt": "^5.0.3"
+    "typescript": "^3.5.3",
+    "typescript-tslint-plugin": "^0.5.4",
+    "unified": "^8.3.2",
+    "version-bump-prompt": "^5.0.4"
   },
   "dependencies": {
+    "url-regex": "^5.0.0",
+    "vfile": "^4.0.1"
   }
 }

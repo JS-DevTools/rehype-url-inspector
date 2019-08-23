@@ -1,11 +1,12 @@
-import { projectExportName } from "./project-package-name";
+import { inspectUrls } from "./rehype-url-inspector";
 
-export { Options } from "./settings";
-export { projectExportName };
+export { Options } from "./options";
+export * from "./types";
+export { inspectUrls };
 
-// Export `projectExportName` as the default export
+// Export `inspectUrls` as the default export
 // tslint:disable: no-default-export
-export default projectExportName;
+export default inspectUrls;
 
 // CommonJS default export hack
 if (typeof module === "object" && typeof module.exports === "object") {
