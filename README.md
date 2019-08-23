@@ -15,48 +15,67 @@ Rehype URL Inspector
 
 
 
-Step 1: Copy this repo
----------------------------------------------
-Create a new git repo and copy the contents of this repo into it.
+
+Installation
+--------------------------
+You can install `rehype-url-inspector` via [npm](https://docs.npmjs.com/about-npm/).
+
+```bash
+npm install rehype-url-inspector
+```
+
+You'll probably want to install [unified](https://unifiedjs.com/), [rehype-parse](https://github.com/rehypejs/rehype/tree/master/packages/rehype-parse), [rehype-stringify](https://github.com/rehypejs/rehype/tree/master/packages/rehype-stringify), and [to-vfile](https://github.com/vfile/to-vfile) as well.
+
+```bash
+npm install unified rehype-parse rehype-stringify to-vfile
+```
 
 
 
-Step 2: Delete unneeded files
----------------------------------------------
-If you **don't** need a CLI, then:
-  - Delete the following files and directories:
-    - `bin`
-    - `src/cli`
-    - `test/specs/cli.spec.js`
-    - `test/utils/project-cli-name.js`
-  - Delete the following fields in `package.json`:
-    - `bin`
-    - `files.bin`
-    - `devDependencies.chai-exec`
-    - `dependencies.command-line-args`
+Usage
+--------------------------
+Using the URL Inspector plugin requires an understanding of how to use Unified and Rehype. [Here is an excelleng guide](https://unifiedjs.com/using-unified.html) to learn the basics.
+
+The URL Inspector plugin works just like any other Rehype plugin. Pass it to [the `.use()` method](https://github.com/unifiedjs/unified#processoruseplugin-options) with an [options object](#options).
+
+```javascript
+const unified = require("unified");
+const inspectUrls = require("rehype-url-inspector");
+
+// Use the Rehype URL Inspector plugin with custom options
+unified().use(inspectUrls, {
+  inspect(urls) { ... },      // This function is called once with ALL of the URLs
+  inspectEach(url) { ... },   // This function is called for each URL as it's found
+  selectors: [
+    "div[data-image]"         // CSS selectors for custom URL attributes
+  ]
+});
+```
 
 
 
-Step 3: Replace placeholders
----------------------------------------------
-Replace all occurrences of the following placeholders in all files:
+Options
+--------------------------
+Rehype URL Inspector supports the following options:
 
-|Placeholder                        |Description
-|:----------------------------------|:------------------------------------------------------------
-|`project-package-name`             |This is the name of the NPM package. It should also match the GitHub repo name. It should be kebab-cased.
-|`project-cli-name`                 |The name of the CLI program for this project, if any.
-|`projectExportName`                |The name of the library's default export, if any.  This should be a valid JavaScript identifier name.
-|`Friendly Project Name`            |This is the human friendly name of the project that is used in the ReadMe, descriptions, and docs pages
-|`This is the project description`  |A short, human friendly description of the project that is used in the ReadMe and package.json
-
-
-
-Step 4: TODOs
----------------------------------------------
-Find all "TODO" notes in the code and follow their instructions.
+|Option                |Type                |Default                |Description
+|:---------------------|:-------------------|:----------------------|:-----------------------------------------
+|`selectors`           |array of strings, objects, and/or functions |[built-in selectors](src/selectors.ts) |Selectors indicate where to look for URLs in the document. Each selector can be a CSS attribute selector string, like `a[href]` or `img[src]`, or a function that accepts a [HAST node](https://github.com/syntax-tree/hast) and returns its URL(s). See [`extractors.ts`](src/extractors.ts) for examples.
+|`keepDefaultSelectors`|boolean             |`true`                 |Whether to keep the default selectors in addition to any custom ones.
+|`inspect`             |function            |no-op                  |A function that is called _once_ and receives an array containing all the URLs in the document
+|`inspectEach`         |function            |no-op                  |A function that is called for _each_ URL in the document as it's found. Return `false` to abort the search and skip the rest of the document.
 
 
 
-Step 5: ReadMe
----------------------------------------------
-Delete this file and replace it with `README_md`.
+URL Objects
+--------------------------
+The `inspectEach()` function receives a [`UrlMatch` onject](src/types.ts).  The `inspect()` function receves an array of `UrlMatch` objects.  Each object has the following properties:
+
+|Property               |Type                 |Description
+|:----------------------|:--------------------|:------------------------------------
+|`url`                  |string               |The URL that was found
+|`propertyName`         |string or undefined  |The name of the [HAST node property](https://github.com/syntax-tree/hast#properties) where the URL was found, such as `"src"` or `"href"`. If the URL was found in the text content of the node, then `propertyName` is `undefined`.
+|`node`                 |object               |The [HAST Element node](https://github.com/syntax-tree/hast#element) where the URL was found. **You can make changes to this node**, such as re-writing the URL, adding additional attributes, etc.
+|`root`                 |object               |The [HAST Root node](https://github.com/syntax-tree/hast#root). This gives you access to the whole document if you need it.
+|`file`                 |onject               |The [File object](https://github.com/vfile/vfile) that gives you information about the HTML file itself, such as the path and file name.
+
