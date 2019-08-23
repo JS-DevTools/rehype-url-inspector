@@ -45,8 +45,11 @@ function compare (matches, urls) {
 /**
  * Formats a match for easy visual diffing
  */
-function format ({ tag, prop, url }) {
-  if (prop) {
+function format ({ tag, prop, url } = {}) {
+  if (!tag) {
+    return "MISSING";
+  }
+  else if (prop) {
     return `<${tag} ${prop}="${url}">`;
   }
   else {
