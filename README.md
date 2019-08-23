@@ -1,6 +1,17 @@
-Node.js TypeScript Template
-===========================
-This is a **template repo** for Node.js projects written in TypeScript. This template works for libraries and/or CLIs.
+Rehype URL Inspector
+==============================
+### A [rehype](https://github.com/rehypejs/rehype) plugin to inspect, validate, or rewrite URLs anywhere in an HTML document
+
+[![Cross-Platform Compatibility](https://jsdevtools.org/img/badges/os-badges.svg)](https://travis-ci.com/JS-DevTools/rehype-url-inspector)
+[![Build Status](https://api.travis-ci.com/JS-DevTools/rehype-url-inspector.svg?branch=master)](https://travis-ci.com/JS-DevTools/rehype-url-inspector)
+
+[![Coverage Status](https://coveralls.io/repos/github/JS-DevTools/rehype-url-inspector/badge.svg?branch=master)](https://coveralls.io/github/JS-DevTools/rehype-url-inspector)
+[![Dependencies](https://david-dm.org/JS-DevTools/rehype-url-inspector.svg)](https://david-dm.org/JS-DevTools/rehype-url-inspector)
+
+[![npm](https://img.shields.io/npm/v/rehype-url-inspector.svg)](https://www.npmjs.com/package/rehype-url-inspector)
+[![License](https://img.shields.io/npm/l/rehype-url-inspector.svg)](LICENSE)
+
+
 
 
 

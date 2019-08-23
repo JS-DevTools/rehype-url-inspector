@@ -1,17 +1,29 @@
 {
-  "name": "project-package-name",
-  "version": "1.0.0-alpha.0",
-  "description": "This is the project description",
-  "keywords": [],
+  "name": "rehype-url-inspector",
+  "version": "0.0.1",
+  "description": "A rehype plugin to inspect, validate, or rewrite URLs anywhere in an HTML document",
+  "keywords": [
+    "unified",
+    "rehype",
+    "plugin",
+    "rehype-plugin",
+    "url",
+    "rewrite",
+    "validate",
+    "inspect",
+    "normalize",
+    "404",
+    "broken links"
+  ],
   "author": {
     "name": "James Messinger",
     "url": "https://jamesmessinger.com"
   },
   "license": "MIT",
-  "homepage": "https://jsdevtools.org/project-package-name",
+  "homepage": "https://jsdevtools.org/rehype-url-inspector",
   "repository": {
     "type": "git",
-    "url": "https://github.com/JS-DevTools/project-package-name.git"
+    "url": "https://github.com/JS-DevTools/rehype-url-inspector.git"
   },
   "main": "lib/index.js",
   "types": "lib/index.d.js",
