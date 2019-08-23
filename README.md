@@ -79,3 +79,39 @@ The `inspectEach()` function receives a [`UrlMatch` onject](src/types.ts).  The 
 |`root`                 |object               |The [HAST Root node](https://github.com/syntax-tree/hast#root). This gives you access to the whole document if you need it.
 |`file`                 |onject               |The [File object](https://github.com/vfile/vfile) that gives you information about the HTML file itself, such as the path and file name.
 
+
+
+Contributing
+--------------------------
+Contributions, enhancements, and bug-fixes are welcome!  [File an issue](https://github.com/JS-DevTools/rehype-url-inspector/issues) on GitHub and [submit a pull request](https://github.com/JS-DevTools/rehype-url-inspector/pulls).
+
+#### Building
+To build the project locally on your computer:
+
+1. __Clone this repo__<br>
+`git clone https://github.com/JS-DevTools/rehype-url-inspector.git`
+
+2. __Install dependencies__<br>
+`npm install`
+
+3. __Build the code__<br>
+`npm run build`
+
+4. __Run the tests__<br>
+`npm test`
+
+
+
+License
+--------------------------
+rehype-url-inspector is 100% free and open-source, under the [MIT license](LICENSE). Use it however you want.
+
+
+
+Big Thanks To
+--------------------------
+Thanks to these awesome companies for their support of Open Source developers ❤
+
+[![Travis CI](https://jsdevtools.org/img/badges/travis-ci.svg)](https://travis-ci.com)
+[![SauceLabs](https://jsdevtools.org/img/badges/sauce-labs.svg)](https://saucelabs.com)
+[![Coveralls](https://jsdevtools.org/img/badges/coveralls.svg)](https://coveralls.io)
