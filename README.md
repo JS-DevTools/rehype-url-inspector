@@ -2,7 +2,7 @@ Rehype URL Inspector
 ==============================
 ### A [rehype](https://github.com/rehypejs/rehype) plugin to inspect, validate, or rewrite URLs anywhere in an HTML document
 
-[![Cross-Platform Compatibility](https://jsdevtools.org/img/badges/os-badges.svg)](https://travis-ci.com/JS-DevTools/rehype-url-inspector)
+[![Cross-Platform Compatibility](https://jstools.dev/img/badges/os-badges.svg)](https://travis-ci.com/JS-DevTools/rehype-url-inspector)
 [![Build Status](https://api.travis-ci.com/JS-DevTools/rehype-url-inspector.svg?branch=master)](https://travis-ci.com/JS-DevTools/rehype-url-inspector)
 
 [![Coverage Status](https://coveralls.io/repos/github/JS-DevTools/rehype-url-inspector/badge.svg?branch=master)](https://coveralls.io/github/JS-DevTools/rehype-url-inspector)
@@ -237,6 +237,6 @@ Big Thanks To
 --------------------------
 Thanks to these awesome companies for their support of Open Source developers ❤
 
-[![Travis CI](https://jsdevtools.org/img/badges/travis-ci.svg)](https://travis-ci.com)
-[![SauceLabs](https://jsdevtools.org/img/badges/sauce-labs.svg)](https://saucelabs.com)
-[![Coveralls](https://jsdevtools.org/img/badges/coveralls.svg)](https://coveralls.io)
+[![Travis CI](https://jstools.dev/img/badges/travis-ci.svg)](https://travis-ci.com)
+[![SauceLabs](https://jstools.dev/img/badges/sauce-labs.svg)](https://saucelabs.com)
+[![Coveralls](https://jstools.dev/img/badges/coveralls.svg)](https://coveralls.io)

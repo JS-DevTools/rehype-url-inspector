@@ -20,7 +20,7 @@
     "url": "https://jamesmessinger.com"
   },
   "license": "MIT",
-  "homepage": "https://jsdevtools.org/rehype-url-inspector",
+  "homepage": "https://jstools.dev/rehype-url-inspector",
   "repository": {
     "type": "git",
     "url": "https://github.com/JS-DevTools/rehype-url-inspector.git"
