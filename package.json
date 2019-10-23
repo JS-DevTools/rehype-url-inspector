@@ -1,6 +1,6 @@
 {
   "name": "rehype-url-inspector",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A rehype plugin to inspect, validate, or rewrite URLs anywhere in an HTML document",
   "keywords": [
     "unified",
