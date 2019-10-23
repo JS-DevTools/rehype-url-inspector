@@ -26,7 +26,7 @@
     "url": "https://github.com/JS-DevTools/rehype-url-inspector.git"
   },
   "main": "lib/index.js",
-  "types": "lib/index.d.js",
+  "types": "lib/index.d.ts",
   "files": [
     "lib"
   ],
