@@ -8,8 +8,8 @@ Rehype URL Inspector
 [![Coverage Status](https://coveralls.io/repos/github/JS-DevTools/rehype-url-inspector/badge.svg?branch=master)](https://coveralls.io/github/JS-DevTools/rehype-url-inspector)
 [![Dependencies](https://david-dm.org/JS-DevTools/rehype-url-inspector.svg)](https://david-dm.org/JS-DevTools/rehype-url-inspector)
 
-[![npm](https://img.shields.io/npm/v/rehype-url-inspector.svg)](https://www.npmjs.com/package/rehype-url-inspector)
-[![License](https://img.shields.io/npm/l/rehype-url-inspector.svg)](LICENSE)
+[![npm](https://img.shields.io/npm/v/@jsdevtools/rehype-url-inspector.svg)](https://www.npmjs.com/package/@jsdevtools/rehype-url-inspector)
+[![License](https://img.shields.io/npm/l/@jsdevtools/rehype-url-inspector.svg)](LICENSE)
 
 
 
@@ -92,7 +92,7 @@ This script reads the `example.html` file above and finds all the URLs in it. Th
 ```javascript
 const unified = require("unified");
 const parse = require("rehype-parse");
-const inspectUrls = require("rehype-url-inspector");
+const inspectUrls = require("@jsdevtools/rehype-url-inspector");
 const stringify = require("rehype-stringify");
 const toVFile = require("to-vfile");
 
@@ -142,10 +142,10 @@ some-page.html
 
 Installation
 --------------------------
-You can install `rehype-url-inspector` via [npm](https://docs.npmjs.com/about-npm/).
+You can install Rehype URL Inspector via [npm](https://docs.npmjs.com/about-npm/).
 
 ```bash
-npm install rehype-url-inspector
+npm install @jsdevtools/rehype-url-inspector
 ```
 
 You'll probably want to install [unified](https://unifiedjs.com/), [rehype-parse](https://github.com/rehypejs/rehype/tree/master/packages/rehype-parse), [rehype-stringify](https://github.com/rehypejs/rehype/tree/master/packages/rehype-stringify), and [to-vfile](https://github.com/vfile/to-vfile) as well.
@@ -164,7 +164,7 @@ The URL Inspector plugin works just like any other Rehype plugin. Pass it to [th
 
 ```javascript
 const unified = require("unified");
-const inspectUrls = require("rehype-url-inspector");
+const inspectUrls = require("@jsdevtools/rehype-url-inspector");
 
 // Use the Rehype URL Inspector plugin with custom options
 unified().use(inspectUrls, {
@@ -229,7 +229,7 @@ To build the project locally on your computer:
 
 License
 --------------------------
-rehype-url-inspector is 100% free and open-source, under the [MIT license](LICENSE). Use it however you want.
+Rehype URL Inspector is 100% free and open-source, under the [MIT license](LICENSE). Use it however you want.
 
 
 

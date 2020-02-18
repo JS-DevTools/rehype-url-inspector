@@ -1,5 +1,5 @@
 {
-  "name": "rehype-url-inspector",
+  "name": "@jsdevtools/rehype-url-inspector",
   "version": "1.0.4",
   "description": "A rehype plugin to inspect, validate, or rewrite URLs anywhere in an HTML document",
   "keywords": [
