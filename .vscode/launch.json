@@ -21,6 +21,7 @@
         "--timeout=60000",
         "--retries=0",
       ],
+      "outputCapture": "std",
       "outFiles": [
         "${workspaceFolder}/lib/**/*.js"
       ],
