@@ -195,7 +195,7 @@ Rehype URL Inspector supports the following options:
 
 URL Objects
 --------------------------
-The `inspectEach()` function receives a [`UrlMatch` onject](src/types.ts).  The `inspect()` function receves an array of `UrlMatch` objects.  Each object has the following properties:
+The `inspectEach()` function receives a [`UrlMatch` object](src/types.ts).  The `inspect()` function receves an array of `UrlMatch` objects.  Each object has the following properties:
 
 |Property               |Type                 |Description
 |:----------------------|:--------------------|:------------------------------------
@@ -203,7 +203,7 @@ The `inspectEach()` function receives a [`UrlMatch` onject](src/types.ts).  The 
 |`propertyName`         |string or undefined  |The name of the [HAST node property](https://github.com/syntax-tree/hast#properties) where the URL was found, such as `"src"` or `"href"`. If the URL was found in the text content of the node, then `propertyName` is `undefined`.
 |`node`                 |object               |The [HAST Element node](https://github.com/syntax-tree/hast#element) where the URL was found. **You can make changes to this node**, such as re-writing the URL, adding additional attributes, etc.
 |`root`                 |object               |The [HAST Root node](https://github.com/syntax-tree/hast#root). This gives you access to the whole document if you need it.
-|`file`                 |onject               |The [File object](https://github.com/vfile/vfile) that gives you information about the HTML file itself, such as the path and file name.
+|`file`                 |object               |The [File object](https://github.com/vfile/vfile) that gives you information about the HTML file itself, such as the path and file name.
 
 
 
