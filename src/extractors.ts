@@ -37,8 +37,14 @@ function jsonUrls({ node }: NodeInfo): string[] | undefined {
     && node.children[0].type === "text"             // The child must be a text node
   ) {
     let json = node.children[0].value as string;
-    let urls = urlsPattern.exec(json);
-    return urls || undefined;
+    let match, urls = [];
+
+    while ((match = urlsPattern.exec(json)) !== null) {
+      let url = match[0];
+      urls.push(url);
+    }
+
+    return urls;
   }
 }
 
