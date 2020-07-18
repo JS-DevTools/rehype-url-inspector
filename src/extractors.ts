@@ -37,7 +37,7 @@ function jsonUrls({ node }: NodeInfo): string[] | undefined {
     && node.children[0].type === "text"             // The child must be a text node
   ) {
     let json = node.children[0].value as string;
-    let urls = json.match(urlsPattern);
+    let urls = urlsPattern.exec(json);
     return urls || undefined;
   }
 }
@@ -62,7 +62,6 @@ function styleUrls({ node }: NodeInfo): string[] | undefined {
     let css = node.children[0].value as string;
     let match, urls = [];
 
-    // tslint:disable-next-line: no-conditional-assignment
     while ((match = cssUrlPattern.exec(css)) !== null) {
       let url = match[1];
       urls.push(url);
