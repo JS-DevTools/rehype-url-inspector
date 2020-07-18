@@ -2,8 +2,8 @@ Rehype URL Inspector
 ==============================
 ### A [rehype](https://github.com/rehypejs/rehype) plugin to inspect, validate, or rewrite URLs anywhere in an HTML document
 
-[![Cross-Platform Compatibility](https://jstools.dev/img/badges/os-badges.svg)](https://github.com/JS-DevTools/rehype-url-inspector/blob/master/.github/workflows/CI-CD.yaml)
-[![Build Status](https://github.com/JS-DevTools/rehype-url-inspector/workflows/CI-CD/badge.svg)](https://github.com/JS-DevTools/rehype-url-inspector/blob/master/.github/workflows/CI-CD.yaml)
+[![Cross-Platform Compatibility](https://jstools.dev/img/badges/os-badges.svg)](https://github.com/JS-DevTools/rehype-url-inspector/actions)
+[![Build Status](https://github.com/JS-DevTools/rehype-url-inspector/workflows/CI-CD/badge.svg)](https://github.com/JS-DevTools/rehype-url-inspector/actions)
 
 [![Coverage Status](https://coveralls.io/repos/github/JS-DevTools/rehype-url-inspector/badge.svg?branch=master)](https://coveralls.io/github/JS-DevTools/rehype-url-inspector)
 [![Dependencies](https://david-dm.org/JS-DevTools/rehype-url-inspector.svg)](https://david-dm.org/JS-DevTools/rehype-url-inspector)
@@ -209,7 +209,7 @@ The `inspectEach()` function receives a [`UrlMatch` onject](src/types.ts).  The 
 
 Contributing
 --------------------------
-Contributions, enhancements, and bug-fixes are welcome!  [File an issue](https://github.com/JS-DevTools/rehype-url-inspector/issues) on GitHub and [submit a pull request](https://github.com/JS-DevTools/rehype-url-inspector/pulls).
+Contributions, enhancements, and bug-fixes are welcome!  [Open an issue](https://github.com/JS-DevTools/rehype-url-inspector/issues) on GitHub and [submit a pull request](https://github.com/JS-DevTools/rehype-url-inspector/pulls).
 
 #### Building
 To build the project locally on your computer:
